@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@theme {
+  /* Custom ALIGN Pilates Color Palette */
+  --color-plum-dark: #6b3f69;
+  --color-plum: #8d5f8c;
+  --color-lavender: #a376a2;
+  --color-rose: #ddc3c3;
+  --color-peach: #ffead8;
+  --color-cream: #f5ece0;
+
+  /* Semantic color names for easier use */
+  --color-primary: #8d5f8c;
+  --color-secondary: #a376a2;
+  --color-accent: #ddc3c3;
+  --color-light: #ffead8;
+  --color-lighter: #f5ece0;
+
+  --font-display: "Cormorant", serif;
+  --font-body: "Cormorant", serif;
+}
+
+/* Custom Glassmorphism utilities */
+@utility glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border-radius: 16px;
+}
+
+@utility glass-strong {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  border-radius: 16px;
+}
+
+@utility glass-dark {
+  background: rgba(107, 63, 105, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(163, 118, 162, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(107, 63, 105, 0.2);
+  border-radius: 16px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+}
+/* Custom animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease-out;
+}
+
+/* Mesh gradient background using custom colors */
+.mesh-gradient {
+  background: radial-gradient(at 27% 37%, #a376a2 0px, transparent 50%),
+    radial-gradient(at 97% 21%, #ddc3c3 0px, transparent 50%),
+    radial-gradient(at 52% 99%, #ffead8 0px, transparent 50%),
+    radial-gradient(at 10% 29%, #8d5f8c 0px, transparent 50%),
+    radial-gradient(at 80% 70%, #f5ece0 0px, transparent 50%);
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, #8d5f8c 0%, #a376a2 100%);
+}
+
+.gradient-soft {
+  background: linear-gradient(135deg, #ddc3c3 0%, #ffead8 50%, #f5ece0 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(
+    180deg,
+    #f5ece0 0%,
+    #ffead8 40%,
+    #ddc3c3 70%,
+    #a376a2 100%
+  );
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(12px)) {
+  .glass,
+  .glass-strong,
+  .glass-dark {
+    background: rgba(245, 236, 224, 0.9);
+  }
+}
+
+/* Utility for hiding scrollbar but keeping functionality */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
