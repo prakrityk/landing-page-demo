@@ -4,7 +4,7 @@ export const CDN_URL = import.meta.env.VITE_CDN_URL || '';
 // Helper function to get image URLs
 // Uses CDN if configured, otherwise local images
 export const getImageUrl = (path) => {
-  return CDN_URL ? `${CDN_URL}/${path}` : `/images/${path}`;
+return CDN_URL ? `${CDN_URL}/${path}` : `images/${path}`;
 };
 
 // Classes data for Bento Grid
