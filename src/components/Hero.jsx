@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import GlassCard from './GlassCard';
 import { getImageUrl } from '../components/utils/constants';
 
-const Hero = () => {
+const Hero = ({ onBookingOpen }) => {
   return (
     <section className="min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 py-20 mesh-gradient relative overflow-hidden">
       {/* Background decorative blobs */}
@@ -58,10 +58,18 @@ const Hero = () => {
                   </p>
 
                   {/* CTA Button */}
-                  <button className="w-full bg-plum-dark hover:bg-plum text-cream font-medium py-4 px-8 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl mb-8 flex items-center justify-center gap-2 group">
+                  {/* <button className="w-full bg-plum-dark hover:bg-plum text-cream font-medium py-4 px-8 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl mb-8 flex items-center justify-center gap-2 group">
                     Start Your Journey
                     <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </button> */}
+
+                   <button 
+    onClick={() => onBookingOpen()}
+    className="w-full bg-plum-dark hover:bg-plum text-cream font-medium py-4 px-8 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-xl mb-8 flex items-center justify-center gap-2 group"
+  >
+    Start Your Journey
+    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+  </button>
 
                   {/* Key Features - Compact Grid */}
                   <div className="grid grid-cols-2 gap-x-6 gap-y-4 text-center text-plum-dark border-t border-plum/20 pt-6">

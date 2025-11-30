@@ -63,30 +63,29 @@ export const CLASSES = [
 export const BENEFITS = [
   {
     id: 1,
-    icon: '👥',
+    icon: 'Users',
     title: 'Expert Instructors',
     description: 'Certified professionals with years of experience guiding your journey',
   },
   {
     id: 2,
-    icon: '✨',
+    icon: 'Sparkles',
     title: 'Premium Equipment',
     description: 'State-of-the-art reformers and apparatus for optimal results',
   },
   {
     id: 3,
-    icon: '💜',
+    icon: 'Heart',
     title: 'Small Class Sizes',
     description: 'Personalized attention ensuring proper form and technique',
   },
   {
     id: 4,
-    icon: '⏰',
+    icon: 'Clock',
     title: 'Flexible Schedule',
     description: 'Classes available throughout the day to fit your lifestyle',
   },
 ];
-
 // Pricing tiers
 export const PRICING_TIERS = [
   {
